@@ -1,16 +1,16 @@
 // Datos para los gráficos
 const errorData = {
-    labels: ['256', '512', '1024', '2048', '4096', '8192', '16384', '32768'],
+    labels: ['2', '4', '8', '16', '32', '64', '128', '256'],
     datasets: [
         {
             label: 'Tower ARE',
-            data: [0.372462, 0.063075, 0.008397, 0.000903, 0.000111, 0.000009, 0.000001, 0.000000],
+            data: [3096.778069, 1509.814940, 635.542533, 174.451557, 49.930119, 10.441860, 1.941291, 0.375389],
             borderColor: '#8884d8',
             fill: false
         },
         {
             label: 'MCM ARE',
-            data: [0.370672, 0.063059, 0.008539, 0.000926, 0.000105, 0.000007, 0.000001, 0.000000],
+            data: [1386998224.524614, 1380037695.559350, 1368097237.421357, 1363351812.674170, 1356927332.297949, 504941235.300275, 156054102.153039, 57342487.180886],
             borderColor: '#82ca9d',
             fill: false
         }
@@ -18,35 +18,35 @@ const errorData = {
  };
  
  const towerUsageData = {
-    labels: ['256', '512', '1024', '2048', '4096', '8192', '16384', '32768'],
+    labels: ['2', '4', '8', '16', '32', '64', '128', '256'],
     datasets: [
         {
             label: 'Level 0 (2-bit)',
-            data: [38.79, 21.78, 11.57, 5.95, 3.02, 1.52, 0.76, 0.38],
+            data: [100.00, 100.00, 100.00, 99.98, 98.13, 85.87, 62.40, 38.80],
             borderColor: '#8884d8',
             fill: false
         },
         {
-            label: 'Level 1 (4-bit)', 
-            data: [62.29, 38.82, 21.78, 11.55, 5.95, 3.02, 1.52, 0.76],
+            label: 'Level 1 (4-bit)',
+            data: [100.00, 100.00, 100.00, 100.00, 99.99, 98.07, 86.03, 62.70],
             borderColor: '#82ca9d',
             fill: false
         },
         {
             label: 'Level 2 (8-bit)',
-            data: [85.93, 62.50, 38.75, 21.74, 11.57, 5.96, 3.02, 1.52],
+            data: [100.00, 100.00, 100.00, 100.00, 100.00, 99.96, 98.07, 86.10],
             borderColor: '#ff7300',
             fill: false
         },
         {
             label: 'Level 3 (16-bit)',
-            data: [97.97, 85.92, 62.54, 38.78, 21.76, 11.56, 5.95, 3.02],
+            data: [100.00, 100.00, 100.00, 100.00, 100.00, 100.00, 99.98, 97.97],
             borderColor: '#0088aa',
-            fill: false  
+            fill: false
         },
         {
             label: 'Level 4 (32-bit)',
-            data: [99.97, 97.99, 86.23, 62.57, 38.83, 21.74, 11.55, 5.95],
+            data: [100.00, 100.00, 100.00, 100.00, 100.00, 100.00, 100.00, 99.97],
             borderColor: '#884444',
             fill: false
         }
@@ -54,42 +54,42 @@ const errorData = {
  };
  
  const mcmUsageData = {
-    labels: ['256', '512', '1024', '2048', '4096', '8192', '16384', '32768'],
+    labels: ['2', '4', '8', '16', '32', '64', '128', '256'],
     datasets: [
         {
             label: 'Level 0 (2-bit)',
-            data: [38.83, 21.79, 11.54, 5.95, 3.02, 1.52, 0.76, 0.38],
+            data: [100.00, 100.00, 100.00, 100.00, 100.00, 100.00, 100.00, 99.94],
             borderColor: '#8884d8',
             fill: false
         },
         {
             label: 'Level 1 (4-bit)',
-            data: [62.60, 38.84, 21.77, 11.53, 5.96, 3.02, 1.52, 0.76],
+            data: [100.00, 100.00, 100.00, 100.00, 100.00, 100.00, 100.00, 99.92],
             borderColor: '#82ca9d',
             fill: false
         },
         {
-            label: 'Level 2 (8-bit)', 
-            data: [86.04, 62.74, 38.84, 21.75, 11.56, 5.95, 3.02, 1.52],
+            label: 'Level 2 (8-bit)',
+            data: [100.00, 100.00, 100.00, 100.00, 100.00, 100.00, 100.00, 98.44],
             borderColor: '#ff7300',
             fill: false
         },
         {
             label: 'Level 3 (16-bit)',
-            data: [98.01, 85.95, 62.59, 38.78, 21.74, 11.56, 5.95, 3.02],
+            data: [100.00, 100.00, 100.00, 100.00, 100.00, 99.63, 60.40, 16.03],
             borderColor: '#0088aa',
             fill: false
         },
         {
             label: 'Level 4 (32-bit)',
-            data: [99.94, 98.26, 86.15, 62.72, 38.85, 21.77, 11.56, 5.95],
+            data: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
             borderColor: '#884444',
             fill: false
         }
     ]
  };
  
- // Rest of configuration remains the same
+ // Rest of the configuration and chart setup code remains the same as before
  const commonOptions = {
     responsive: true,
     maintainAspectRatio: false,
@@ -105,7 +105,6 @@ const errorData = {
     }
  };
  
- // Charts configuration remains the same
  new Chart(document.getElementById('errorChart'), {
     type: 'line',
     data: errorData,
@@ -195,7 +194,7 @@ const errorData = {
     }
  });
  
- // Table filling logic remains the same
+ // Table filling logic
  const tables = document.querySelectorAll('.data-table');
  
  const areTable = tables[0];
