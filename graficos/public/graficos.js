@@ -4,13 +4,13 @@ const errorData = {
     datasets: [
         {
             label: 'Tower ARE',
-            data: [30.5107, 5.4790, 0.9959, 0.1806, 0.0273, 0.0032, 0.0003, 0.0000],
+            data: [0.372462, 0.063075, 0.008397, 0.000903, 0.000111, 0.000009, 0.000001, 0.000000],
             borderColor: '#8884d8',
             fill: false
         },
         {
             label: 'MCM ARE',
-            data: [30.4940, 5.3799, 0.9886, 0.1805, 0.0272, 0.0032, 0.0004, 0.0000],
+            data: [0.370672, 0.063059, 0.008539, 0.000926, 0.000105, 0.000007, 0.000001, 0.000000],
             borderColor: '#82ca9d',
             fill: false
         }
@@ -21,32 +21,32 @@ const errorData = {
     labels: ['256', '512', '1024', '2048', '4096', '8192', '16384', '32768'],
     datasets: [
         {
-            label: 'Nivel 0 (2-bit)',
-            data: [94.36, 76.28, 51.26, 30.17, 16.44, 8.59, 4.39, 2.22],
+            label: 'Level 0 (2-bit)',
+            data: [38.79, 21.78, 11.57, 5.95, 3.02, 1.52, 0.76, 0.38],
             borderColor: '#8884d8',
             fill: false
         },
         {
-            label: 'Nivel 1 (4-bit)',
-            data: [99.69, 94.34, 76.25, 51.27, 30.18, 16.43, 8.58, 4.39],
+            label: 'Level 1 (4-bit)', 
+            data: [62.29, 38.82, 21.78, 11.55, 5.95, 3.02, 1.52, 0.76],
             borderColor: '#82ca9d',
             fill: false
         },
         {
-            label: 'Nivel 2 (8-bit)',
-            data: [100.00, 99.69, 94.39, 76.21, 51.27, 30.17, 16.43, 8.59],
+            label: 'Level 2 (8-bit)',
+            data: [85.93, 62.50, 38.75, 21.74, 11.57, 5.96, 3.02, 1.52],
             borderColor: '#ff7300',
             fill: false
         },
         {
-            label: 'Nivel 3 (16-bit)',
-            data: [100.00, 100.00, 99.71, 94.39, 76.24, 51.27, 30.17, 16.44],
+            label: 'Level 3 (16-bit)',
+            data: [97.97, 85.92, 62.54, 38.78, 21.76, 11.56, 5.95, 3.02],
             borderColor: '#0088aa',
-            fill: false
+            fill: false  
         },
         {
-            label: 'Nivel 4 (32-bit)',
-            data: [100.00, 100.00, 100.00, 99.71, 94.34, 76.31, 51.21, 30.16],
+            label: 'Level 4 (32-bit)',
+            data: [99.97, 97.99, 86.23, 62.57, 38.83, 21.74, 11.55, 5.95],
             borderColor: '#884444',
             fill: false
         }
@@ -57,39 +57,39 @@ const errorData = {
     labels: ['256', '512', '1024', '2048', '4096', '8192', '16384', '32768'],
     datasets: [
         {
-            label: 'Nivel 0 (2-bit)',
-            data: [94.33, 76.17, 51.23, 30.18, 16.44, 8.59, 4.39, 2.22],
+            label: 'Level 0 (2-bit)',
+            data: [38.83, 21.79, 11.54, 5.95, 3.02, 1.52, 0.76, 0.38],
             borderColor: '#8884d8',
             fill: false
         },
         {
-            label: 'Nivel 1 (4-bit)',
-            data: [99.68, 94.40, 76.27, 51.25, 30.16, 16.45, 8.59, 4.39],
+            label: 'Level 1 (4-bit)',
+            data: [62.60, 38.84, 21.77, 11.53, 5.96, 3.02, 1.52, 0.76],
             borderColor: '#82ca9d',
             fill: false
         },
         {
-            label: 'Nivel 2 (8-bit)',
-            data: [100.00, 99.63, 94.38, 76.14, 51.29, 30.15, 16.44, 8.59],
+            label: 'Level 2 (8-bit)', 
+            data: [86.04, 62.74, 38.84, 21.75, 11.56, 5.95, 3.02, 1.52],
             borderColor: '#ff7300',
             fill: false
         },
         {
-            label: 'Nivel 3 (16-bit)',
-            data: [100.00, 100.00, 99.68, 94.34, 76.25, 51.30, 30.18, 16.43],
+            label: 'Level 3 (16-bit)',
+            data: [98.01, 85.95, 62.59, 38.78, 21.74, 11.56, 5.95, 3.02],
             borderColor: '#0088aa',
             fill: false
         },
         {
-            label: 'Nivel 4 (32-bit)',
-            data: [100.00, 100.00, 100.00, 99.65, 94.31, 76.17, 51.26, 30.18],
+            label: 'Level 4 (32-bit)',
+            data: [99.94, 98.26, 86.15, 62.72, 38.85, 21.77, 11.56, 5.95],
             borderColor: '#884444',
             fill: false
         }
     ]
  };
  
- // Configuración común para los gráficos
+ // Rest of configuration remains the same
  const commonOptions = {
     responsive: true,
     maintainAspectRatio: false,
@@ -105,7 +105,7 @@ const errorData = {
     }
  };
  
- // Gráficos
+ // Charts configuration remains the same
  new Chart(document.getElementById('errorChart'), {
     type: 'line',
     data: errorData,
@@ -115,7 +115,7 @@ const errorData = {
             x: {
                 title: {
                     display: true,
-                    text: 'Memoria (KB)'
+                    text: 'Memory (KB)'
                 }
             },
             y: {
@@ -137,7 +137,7 @@ const errorData = {
             x: {
                 title: {
                     display: true,
-                    text: 'Memoria (KB)'
+                    text: 'Memory (KB)'
                 }
             },
             y: {
@@ -160,13 +160,13 @@ const errorData = {
             x: {
                 title: {
                     display: true,
-                    text: 'Memoria (KB)'
+                    text: 'Memory (KB)'
                 }
             },
             y: {
                 title: {
                     display: true,
-                    text: 'Tasa de Uso (%)'
+                    text: 'Usage Rate (%)'
                 }
             }
         }
@@ -182,23 +182,22 @@ const errorData = {
             x: {
                 title: {
                     display: true,
-                    text: 'Memoria (KB)'
+                    text: 'Memory (KB)'
                 }
             },
             y: {
                 title: {
                     display: true,
-                    text: 'Tasa de Uso (%)'
+                    text: 'Usage Rate (%)'
                 }
             }
         }
     }
  });
  
- // Llenar tablas
+ // Table filling logic remains the same
  const tables = document.querySelectorAll('.data-table');
  
- // Tabla ARE
  const areTable = tables[0];
  for (let i = 0; i < errorData.labels.length; i++) {
     const row = document.createElement('tr');
@@ -215,7 +214,6 @@ const errorData = {
     areTable.appendChild(row);
  }
  
- // Tabla TowerSketch
  const towerTable = tables[1];
  for (let i = 0; i < towerUsageData.labels.length; i++) {
     const row = document.createElement('tr');
@@ -228,7 +226,6 @@ const errorData = {
     towerTable.appendChild(row);
  }
  
- // Tabla CM-Multinivel
  const mcmTable = tables[2];
  for (let i = 0; i < mcmUsageData.labels.length; i++) {
     const row = document.createElement('tr');
