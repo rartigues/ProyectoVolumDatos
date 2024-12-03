@@ -30,3 +30,5 @@
 *.exe
 *.out
 *.app
+tools/equinix-nyc.dirA.20180517-134300.UTC.anon.pcap
+data/CAIDA/equinix-nyc.dirA.20180517.10m.dat
