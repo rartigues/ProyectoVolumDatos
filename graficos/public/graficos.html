@@ -49,18 +49,32 @@
 <body>
    <div class="container">
        <h1>Gráficos de Resultados</h1>
+       
        <h2>Error Relativo Promedio vs Memoria</h2>
        <div class="graph-container">
            <canvas id="errorChart"></canvas>
        </div>
+       
        <h2>Error Relativo Promedio vs Memoria (Escala Logarítmica)</h2>
        <div class="graph-container">
            <canvas id="errorLogChart"></canvas>
        </div>
+       
+       <h2>Error Absoluto Promedio vs Memoria</h2>
+       <div class="graph-container">
+           <canvas id="aaeChart"></canvas>
+       </div>
+       
+       <h2>Análisis de Percentiles vs Memoria</h2>
+       <div class="graph-container">
+           <canvas id="percentileErrorChart"></canvas>
+       </div>
+       
        <h2>Uso de Niveles - TowerSketch</h2>
        <div class="graph-container">
            <canvas id="towerUsageChart"></canvas>
        </div>
+       
        <h2>Uso de Niveles - CM-Multinivel</h2>
        <div class="graph-container">
            <canvas id="mcmUsageChart"></canvas>
@@ -77,6 +91,17 @@
                <th>Tower ARE (%)</th>
                <th>MCM ARE (%)</th>
                <th>Diferencia (%)</th>
+           </tr>
+       </table>
+
+       <h3>Análisis de Percentiles</h3>
+       <table class="data-table">
+           <tr>
+               <th>Memoria (KB)</th>
+               <th>Tower Infreq ARE (%)</th>
+               <th>MCM Infreq ARE (%)</th>
+               <th>Tower Freq ARE (%)</th>
+               <th>MCM Freq ARE (%)</th>
            </tr>
        </table>
 
