@@ -88,7 +88,6 @@ const mcmUsageData = {
     ]
 };
 
-// The rest of the code remains exactly the same as in your original file
 const commonOptions = {
     responsive: true,
     maintainAspectRatio: false,
@@ -193,7 +192,6 @@ new Chart(document.getElementById('mcmUsageChart'), {
     }
 });
 
-// Table filling logic is kept exactly the same
 const tables = document.querySelectorAll('.data-table');
 
 const areTable = tables[0];
