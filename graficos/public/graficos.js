@@ -242,6 +242,51 @@ new Chart(document.getElementById('mcmUsageChart'), {
 	}
 });
 
+new Chart(document.getElementById('aaeChart'), {
+    type: 'line',
+    data: aaeData,
+    options: {
+        ...commonOptions,
+        scales: {
+            x: {
+                title: {
+                    display: true,
+                    text: 'Memory (KB)'
+                }
+            },
+            y: {
+                title: {
+                    display: true,
+                    text: 'AAE'
+                }
+            }
+        }
+    }
+});
+
+new Chart(document.getElementById('percentileErrorChart'), {
+    type: 'line',
+    data: percentileData,
+    options: {
+        ...commonOptions,
+        scales: {
+            x: {
+                title: {
+                    display: true,
+                    text: 'Memory (KB)'
+                }
+            },
+            y: {
+                type: 'logarithmic',
+                title: {
+                    display: true,
+                    text: 'ARE (%)'
+                }
+            }
+        }
+    }
+});
+
 // Update tables
 const tables = document.querySelectorAll('.data-table');
 
