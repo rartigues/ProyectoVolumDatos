@@ -1,15 +1,15 @@
 const errorData = {
-	labels: ['16', '64', '256', '1024', '4096'],
+	labels: ['16', '64', '256', '1024', '2048', '4096', '8192', '16384', '32768', '65536'],
 	datasets: [
 		{
 			label: 'TowerSketch ARE',
-			data: [3466.402008, 528.807014, 30.610068, 0.990022, 0.027177],
+			data: [3464.280848, 531.272861, 30.565794, 0.988179, 0.180638, 0.027350, 0.003168, 0.000313, 0.000033, 0.000003],
 			borderColor: '#8884d8',
 			fill: false
 		},
 		{
 			label: 'MCM ARE',
-			data: [46606.914369, 46058.485533, 39744.854446, 1606.779552, 281.333435],
+			data: [46607.039770, 46062.515099, 39734.197833, 1611.897009, 729.752151, 282.230440, 75.206412, 19.375268, 8.111313, 3.144842],
 			borderColor: '#82ca9d',
 			fill: false
 		}
@@ -17,35 +17,35 @@ const errorData = {
 };
 
 const towerUsageData = {
-	labels: ['16', '64', '256', '1024', '4096'],
+	labels: ['16', '64', '256', '1024', '2048', '4096', '8192', '16384', '32768', '65536'],
 	datasets: [
 		{
 			label: 'Level 0 (2-bit)',
-			data: [100.00, 100.00, 94.35, 51.25, 16.45],
+			data: [100.00, 100.00, 94.35, 51.23, 30.18, 16.44, 8.59, 4.39, 2.22, 1.12],
 			borderColor: '#8884d8',
 			fill: false
 		},
 		{
 			label: 'Level 1 (4-bit)',
-			data: [100.00, 100.00, 99.68, 76.16, 30.18],
+			data: [100.00, 100.00, 99.70, 76.23, 51.27, 30.15, 16.44, 8.59, 4.39, 2.22],
 			borderColor: '#82ca9d',
 			fill: false
 		},
 		{
 			label: 'Level 2 (8-bit)',
-			data: [100.00, 100.00, 100.00, 94.36, 51.23],
+			data: [100.00, 100.00, 100.00, 94.48, 76.25, 51.27, 30.18, 16.44, 8.59, 4.39],
 			borderColor: '#ff7300',
 			fill: false
 		},
 		{
 			label: 'Level 3 (16-bit)',
-			data: [100.00, 100.00, 100.00, 99.69, 76.28],
+			data: [100.00, 100.00, 100.00, 99.70, 94.41, 76.28, 51.24, 30.17, 16.44, 8.59],
 			borderColor: '#0088aa',
 			fill: false
 		},
 		{
 			label: 'Level 4 (20-bit)',
-			data: [100.00, 100.00, 100.00, 100.00, 94.35],
+			data: [100.00, 100.00, 100.00, 100.00, 99.69, 94.36, 76.19, 51.17, 30.17, 16.44],
 			borderColor: '#884444',
 			fill: false
 		}
@@ -53,35 +53,35 @@ const towerUsageData = {
 };
 
 const mcmUsageData = {
-	labels: ['16', '64', '256', '1024', '4096'],
+	labels: ['16', '64', '256', '1024', '2048', '4096', '8192', '16384', '32768', '65536'],
 	datasets: [
 		{
 			label: 'Level 0 (2-bit)',
-			data: [100.00, 100.00, 100.00, 100.00, 100.00],
+			data: [100.00, 100.00, 100.00, 100.00, 100.00, 100.00, 100.00, 100.00, 99.92, 97.29],
 			borderColor: '#8884d8',
 			fill: false
 		},
 		{
 			label: 'Level 1 (4-bit)',
-			data: [100.00, 100.00, 100.00, 100.00, 100.00],
+			data: [100.00, 100.00, 100.00, 100.00, 100.00, 100.00, 100.00, 99.51, 99.75, 91.22],
 			borderColor: '#82ca9d',
 			fill: false
 		},
 		{
 			label: 'Level 2 (8-bit)',
-			data: [100.00, 100.00, 100.00, 100.00, 100.00],
+			data: [100.00, 100.00, 100.00, 100.00, 100.00, 100.00, 100.00, 99.38, 94.03, 61.82],
 			borderColor: '#ff7300',
 			fill: false
 		},
 		{
 			label: 'Level 3 (16-bit)',
-			data: [100.00, 100.00, 100.00, 100.00, 100.00],
+			data: [100.00, 100.00, 100.00, 100.00, 100.00, 99.03, 99.99, 81.70, 28.08, 8.67],
 			borderColor: '#0088aa',
 			fill: false
 		},
 		{
 			label: 'Level 4 (32-bit)',
-			data: [100.00, 100.00, 100.00, 44.79, 0.12],
+			data: [100.00, 100.00, 100.00, 56.21, 1.18, 15.20, 0.00, 0.00, 0.00, 0.00],
 			borderColor: '#884444',
 			fill: false
 		}
@@ -199,12 +199,12 @@ for (let i = 0; i < errorData.labels.length; i++) {
 	const row = document.createElement('tr');
 	const towerARE = errorData.datasets[0].data[i];
 	const mcmARE = errorData.datasets[1].data[i];
-	const diff = (towerARE - mcmARE).toFixed(4);
+	const diff = (towerARE - mcmARE).toFixed(6);
 
 	row.innerHTML = `
 		<td>${errorData.labels[i]}</td>
-		<td>${towerARE.toFixed(4)}</td>
-		<td>${mcmARE.toFixed(4)}</td>
+		<td>${towerARE.toFixed(6)}</td>
+		<td>${mcmARE.toFixed(6)}</td>
 		<td>${diff}</td>
 	`;
 	areTable.appendChild(row);
