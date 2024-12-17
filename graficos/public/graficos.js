@@ -290,7 +290,7 @@ new Chart(document.getElementById('percentileErrorChart'), {
 // Update tables
 const tables = document.querySelectorAll('.data-table');
 
-// ARE Table
+// ARE Table (tabla[0])
 const areTable = tables[0];
 for (let i = 0; i < errorData.labels.length; i++) {
     const row = document.createElement('tr');
@@ -308,8 +308,8 @@ for (let i = 0; i < errorData.labels.length; i++) {
     areTable.appendChild(row);
 }
 
-// Create Percentile Table
-const percentileTable = tables[3];
+// Percentile Table (tabla[1])
+const percentileTable = tables[1];
 for (let i = 0; i < percentileData.labels.length; i++) {
     const row = document.createElement('tr');
     const memory = percentileData.labels[i];
@@ -322,26 +322,28 @@ for (let i = 0; i < percentileData.labels.length; i++) {
     percentileTable.appendChild(row);
 }
 
-const towerTable = tables[1];
+// Tower Usage Table (tabla[2])
+const towerTable = tables[2];
 for (let i = 0; i < towerUsageData.labels.length; i++) {
-	const row = document.createElement('tr');
-	row.innerHTML = `
-		<td>${towerUsageData.labels[i]}</td>
-		${towerUsageData.datasets.map(dataset =>
-			`<td>${dataset.data[i].toFixed(2)}</td>`
-		).join('')}
-	`;
-	towerTable.appendChild(row);
+    const row = document.createElement('tr');
+    row.innerHTML = `
+        <td>${towerUsageData.labels[i]}</td>
+        ${towerUsageData.datasets.map(dataset =>
+            `<td>${dataset.data[i].toFixed(2)}</td>`
+        ).join('')}
+    `;
+    towerTable.appendChild(row);
 }
 
-const mcmTable = tables[2];
+// MCM Usage Table (tabla[3])
+const mcmTable = tables[3];
 for (let i = 0; i < mcmUsageData.labels.length; i++) {
-	const row = document.createElement('tr');
-	row.innerHTML = `
-		<td>${mcmUsageData.labels[i]}</td>
-		${mcmUsageData.datasets.map(dataset =>
-			`<td>${dataset.data[i].toFixed(2)}</td>`
-		).join('')}
-	`;
-	mcmTable.appendChild(row);
+    const row = document.createElement('tr');
+    row.innerHTML = `
+        <td>${mcmUsageData.labels[i]}</td>
+        ${mcmUsageData.datasets.map(dataset =>
+            `<td>${dataset.data[i].toFixed(2)}</td>`
+        ).join('')}
+    `;
+    mcmTable.appendChild(row);
 }
