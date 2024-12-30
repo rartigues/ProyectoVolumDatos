@@ -2,7 +2,7 @@ from scapy.all import *
 import struct
 import time
 
-def pcap_to_dat(pcap_file, dat_file, max_packets=2000000):  # Default 2M packets
+def pcap_to_dat(pcap_file, dat_file, max_packets=20000000):  # Default 2M packets
     packet_count = 0
     sniff_reader = PcapReader(pcap_file)
     
@@ -38,4 +38,4 @@ def pcap_to_dat(pcap_file, dat_file, max_packets=2000000):  # Default 2M packets
 if __name__ == "__main__":
     pcap_to_dat("./tools/equinix-nyc.dirA.20180517-134300.UTC.anon.pcap", 
                 "equinix-nyc.dirA.20180517.dat",
-                max_packets=10000000)  # Adjust this number as needed
+                max_packets=20000000)  # Adjust this number as needed
