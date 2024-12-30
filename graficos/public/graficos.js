@@ -358,4 +358,5 @@ document.addEventListener('DOMContentLoaded', () => {
     createCharts();
     updateTables();
 });
-}
+
+
