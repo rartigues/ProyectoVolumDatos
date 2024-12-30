@@ -15,7 +15,7 @@ Resultados experimentales obtenidos con un equipo con las siguientes caracterís
 Se probó usando el dataset CAIDA 2018. Para cambiar el dataset, modificar la siguiente línea en `main.cpp`:
 
 ```cpp
-FILE *file_in = fopen("/share/datasets/CAIDA2018/dataset/130000.dat", "rb");
+FILE *file_in = fopen("data/CAIDA/130000.dat", "rb");
 ```
 
 Se pueden generar más datasets a partir de archivos pcap usando el script de conversión:
