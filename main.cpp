@@ -26,7 +26,7 @@ struct PercentileResults {
 };
 
 // Para testear flujos con distribución controlada
-void generate_zipf_data(int num_flows = 1000, int num_packets = 1000000, double alpha = 1.5) {
+void generate_zipf_data(int num_flows = 1000, int num_packets = 20000000, double alpha = 1.5) {
     cout << "Generating Zipf data with:" << endl
          << "Number of flows: " << num_flows << endl
          << "Number of packets: " << num_packets << endl
