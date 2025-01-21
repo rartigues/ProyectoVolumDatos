@@ -21,4 +21,4 @@ USER nodeuser
 EXPOSE 9911
 
 # Start app
-CMD [ "node", "app.js" ]
+CMD [ "node", "server.js" ]
