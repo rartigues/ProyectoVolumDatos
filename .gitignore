@@ -3578,3 +3578,9 @@ graficos/node_modules/victory-vendor/lib-vendor/d3-voronoi/src/voronoi.js
 graficos/node_modules/victory-vendor/lib-vendor/internmap/LICENSE
 graficos/node_modules/victory-vendor/lib-vendor/internmap/src/index.js
 data/CAIDA/equinix-nyc.dirA.20180517.20m.dat
+rework_informe/main.aux
+rework_informe/main.fdb_latexmk
+rework_informe/main.fls
+rework_informe/main.log
+rework_informe/main.toc
+rework_informe/main.synctex.gz
