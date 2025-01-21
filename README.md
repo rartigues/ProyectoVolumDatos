@@ -3,7 +3,7 @@
 ## Resultados experimentales
 
 > [!IMPORTANT]  
-> Graficos y tablas de resultados se pueden visualizar en [este enlace](https://graficos.rartigues.com)
+> Gráficos y tablas de resultados se pueden visualizar en [este enlace](https://graficos.oracle.rartigues.com)
 
 Resultados experimentales obtenidos con un equipo con las siguientes características:
 
