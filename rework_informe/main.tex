@@ -48,7 +48,7 @@
 \newpage
 
 \section{Resumen}
-El monitoreo de flujos de red es fundamental para la gestión y seguridad de las redes modernas. Este trabajo presenta un análisis comparativo entre dos estructuras de datos probabilísticas: TowerSketch y una implementación multinivel del Count-Min Sketch.
+El monitoreo de flujos de red es fundamental para la gestión y seguridad de las redes modernas. Este trabajo presenta un análisis comparativo entre dos estructuras de datos probabilísticas: TowerSketch y una implementación propuesta del Count-Min Sketch multinivel.
 Utilizando datos reales de CAIDA, se evalúa el rendimiento de ambos esquemas en términos de precisión y eficiencia de memoria. \\ \\ Los resultados demuestran la superioridad significativa de TowerSketch, alcanzando errores relativos cercanos a cero con mayores cantidades 
 de memoria, mientras que el Count-Min Sketch multinivel mantiene errores más elevados incluso en condiciones óptimas. Este estudio proporciona evidencia empírica sobre las ventajas de la estructura jerárquica de TowerSketch para el monitoreo eficiente de flujos de red.
 
@@ -194,7 +194,7 @@ El experimento fue diseñado para realizar una comparación exhaustiva entre Tow
 \end{itemize}
 
 \subsection{Conjuntos de Datos}
-Se utilizó el dataset CAIDA 2018 como fuente principal de datos:
+Se utilizó el dataset \textit{CAIDA 2018 - equinix-nyc.dirA.20180517} como fuente principal de datos:
 
 \begin{itemize}
     \item \textbf{Características del Dataset}:
@@ -276,7 +276,7 @@ El análisis de percentiles revela comportamientos distintos para flujos frecuen
     \begin{itemize}
         \item TowerSketch muestra mejor rendimiento en general
         \item La diferencia se acentúa con mayor memoria disponible
-        \item Convergencia más rápida hacia errores bajos
+        \item Tiene una convergencia más rápida hacia errores bajos
     \end{itemize}
     
     \item \textbf{Flujos Infrecuentes}:
@@ -327,12 +327,12 @@ Los resultados principales del estudio son:
 \newpage
 \section{Conclusiones}
 
-Este estudio comparativo entre TowerSketch y Count-Min Sketch multinivel revela diferencias significativas en rendimiento y diseño estructural. TowerSketch demostró superioridad en términos de:
+\noindent Este estudio comparativo entre TowerSketch y Count-Min Sketch multinivel muestra diferencias significativas en rendimiento y diseño estructural. TowerSketch demostró superioridad en términos de:
 
 \begin{itemize}
-    \item \textbf{Precisión}: Mejores resultados tanto en ARE como AAE, especialmente con memoria superior a 1MB, alcanzando errores cercanos a cero con 64MB mientras CM-Multinivel mantiene errores superiores al 8\%.
+    \item \textbf{Precisión}: Mejores resultados tanto en ARE como AAE, especialmente con memoria superior a 1MB, alcanzando errores cercanos a cero con 64MB mientras CM-Multinivel \underline{mantiene errores superiores al 8\%.} (MCM ARE)
     
-    \item \textbf{Eficiencia Estructural}: La distribución jerárquica de TowerSketch (32,768 contadores en nivel base para 256KB) permite un mejor aprovechamiento de memoria que la distribución uniforme de CM-Multinivel (257x51 por nivel).
+    \item \textbf{Eficiencia Estructural}: La distribución jerárquica de TowerSketch (32,768 contadores en nivel base para 256KB) permite un mejor aprovechamiento de memoria que la distribución uniforme de CM-Multinivel (257x51 = 13,107 por nivel).
     
     \item \textbf{Manejo de Flujos}: Mayor efectividad tanto en flujos frecuentes como infrecuentes, evidenciado en el análisis por percentiles.
 \end{itemize}
