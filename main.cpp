@@ -1,5 +1,6 @@
 #include "tower.h"
-#include "multilevel_cm.h"
+// #include "multilevel_cm.h"
+#include "multilevel_cm2.h"
 #include <thread>
 #include <vector>
 #include <string>
@@ -9,12 +10,13 @@
 #include <iostream>
 #include <fstream>
 #include <iomanip>
+#include <numeric>
 #include <random>
 #include <cmath>
 using namespace std;
 
 const int MAX_PACKETS = 20000000;
-const int NUM_RUNS = 5;
+const int NUM_RUNS = 1;
 string data[20000000];
 unordered_map<string, uint32_t> flow_size;
 
@@ -120,7 +122,7 @@ void read_caida18() {
 PercentileResults calculate_percentile_errors(
    const vector<pair<string, uint32_t>>& sorted_flows,
    TowerSketch& tower,
-   MultilevelCM& mcm,
+   MultilevelCM2& mcm,
    double percentile,
    bool frequent) {
    
@@ -157,7 +159,7 @@ PercentileResults calculate_percentile_errors(
 
 void compare_sketches(uint32_t memory_size, ofstream& results_file, ofstream& tower_level_file, ofstream& mcm_level_file, ofstream& percentile_file) {
    uint32_t tower_width = memory_size / (sizeof(uint32_t) * d);
-   uint32_t mcm_width = memory_size / (sizeof(uint32_t) * ML_DEPTH);
+   uint32_t mcm_width = memory_size / ML_DEPTH; // Memory per level
    
    vector<double> tower_ares(NUM_RUNS), mcm_ares(NUM_RUNS);
    vector<double> tower_aaes(NUM_RUNS), mcm_aaes(NUM_RUNS);
@@ -166,7 +168,7 @@ void compare_sketches(uint32_t memory_size, ofstream& results_file, ofstream& to
    
    for (int run = 0; run < NUM_RUNS; run++) {
        TowerSketch tower(tower_width);
-       MultilevelCM mcm(mcm_width);
+       MultilevelCM2 mcm(mcm_width);
        
        for (int i = 0; i < MAX_PACKETS; ++i) {
            tower.insert(data[i].c_str(), 13);
